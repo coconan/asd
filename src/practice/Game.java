@@ -21,7 +21,14 @@ public class Game {
         for (int currentFrame = 0; currentFrame < theFrame; currentFrame++) {
             int firstThrow = itsThrows[ball++];
             int secondThrow = itsThrows[ball++];
-            score += firstThrow + secondThrow;
+
+            int frameScore = firstThrow + secondThrow;
+            // spare needs next frames first throw
+            if (frameScore == 10) {
+                score += frameScore + itsThrows[ball];
+            } else {
+                score += frameScore;
+            }
         }
         return score;
     }

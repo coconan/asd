@@ -1,28 +1,32 @@
 package test.practice;
 
+import org.junit.Before;
 import org.junit.Test;
 import practice.Game;
 
 import static org.junit.Assert.assertEquals;
 
 public class TestGame {
+    private Game g;
+
+    @Before
+    public void setUp() {
+        g = new Game();
+    }
 
     @Test
     public void testScoreNoThrows() {
-        Game f = new Game();
-        assertEquals(0, f.getScore());
+        assertEquals(0, g.getScore());
     }
 
     @Test
     public void testAddOneThrow() {
-        Game f = new Game();
-        f.add(5);
-        assertEquals(5, f.getScore());
+        g.add(5);
+        assertEquals(5, g.getScore());
     }
 
     @Test
     public void testTwoThrowsNoMark() {
-        Game g = new Game();
         g.add(5);
         g.add(4);
         assertEquals(9, g.getScore());
@@ -30,13 +34,30 @@ public class TestGame {
 
     @Test
     public void testFourThrowsNoMark() {
-        Game g = new Game();
         g.add(5);
         g.add(4);
         g.add(7);
         g.add(2);
         assertEquals(18, g.getScore());
         assertEquals(9, g.getScoreForFrame(1));
+        assertEquals(18, g.getScoreForFrame(2));
+    }
+
+    @Test
+    public void testSimpleSpare() {
+        g.add(3);
+        g.add(7);
+        g.add(3);
+        assertEquals(13, g.getScoreForFrame(1));
+    }
+
+    @Test
+    public void testSimpleFrameAfterSpare() {
+        g.add(3);
+        g.add(7);
+        g.add(3);
+        g.add(2);
+        assertEquals(13, g.getScoreForFrame(1));
         assertEquals(18, g.getScoreForFrame(2));
     }
 }
