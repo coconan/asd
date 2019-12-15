@@ -120,4 +120,13 @@ public class TestGame {
         g.add(6);
         assertEquals(133, g.getScore());
     }
+
+    @Test
+    public void testHeartBreak() {
+        for (int i = 0; i < 11; i++) {
+            g.add(10);
+        }
+        g.add(9);
+        assertEquals(299, g.getScore());
+    }
 }
