@@ -84,4 +84,16 @@ public class TestGame {
         assertEquals(300, g.getScore());
         assertEquals(11, g.getCurrentFrame());
     }
+
+    @Test
+    public void testEndOfArray() {
+        for (int i = 0; i < 9; i++) {
+            g.add(0);
+            g.add(0);
+        }
+        g.add(2);
+        g.add(8);          // 10th frame spare
+        g.add(10);         // strike in last position of array
+        assertEquals(20, g.getScore());
+    }
 }
