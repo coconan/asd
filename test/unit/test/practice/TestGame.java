@@ -31,7 +31,7 @@ public class TestGame {
         g.add(5);
         g.add(4);
         assertEquals(9, g.getScore());
-        assertEquals(1, g.getCurrentFrame());
+        assertEquals(2, g.getCurrentFrame());
     }
 
     @Test
@@ -43,7 +43,7 @@ public class TestGame {
         assertEquals(18, g.getScore());
         assertEquals(9, g.getScoreForFrame(1));
         assertEquals(18, g.getScoreForFrame(2));
-        assertEquals(2, g.getCurrentFrame());
+        assertEquals(3, g.getCurrentFrame());
     }
 
     @Test
