@@ -27,6 +27,7 @@ public class Game {
             firstThrow = true;
             itsCurrentFrame++;
         }
+        itsCurrentFrame = Math.min(11, itsCurrentFrame);
     }
 
     public int getScoreForFrame(int theFrame) {
