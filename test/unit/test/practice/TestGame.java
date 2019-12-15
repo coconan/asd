@@ -65,4 +65,14 @@ public class TestGame {
         assertEquals(18, g.getScore());
         assertEquals(3, g.getCurrentFrame());
     }
+
+    @Test
+    public void testStrike() {
+        g.add(10);
+        g.add(3);
+        g.add(6);
+        assertEquals(19, g.getScoreForFrame(1));
+        assertEquals(28, g.getScore());
+        assertEquals(3, g.getCurrentFrame());
+    }
 }
