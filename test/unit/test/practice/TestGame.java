@@ -22,7 +22,6 @@ public class TestGame {
     @Test
     public void testAddOneThrow() {
         g.add(5);
-        assertEquals(5, g.getScore());
         assertEquals(1, g.getCurrentFrame());
     }
 
@@ -63,6 +62,7 @@ public class TestGame {
         g.add(2);
         assertEquals(13, g.getScoreForFrame(1));
         assertEquals(18, g.getScoreForFrame(2));
+        assertEquals(18, g.getScore());
         assertEquals(3, g.getCurrentFrame());
     }
 }
