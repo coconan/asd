@@ -1,6 +1,6 @@
 package practice;
 
-public class Frame {
+public class Game {
 
     private int itsScore = 0;
 

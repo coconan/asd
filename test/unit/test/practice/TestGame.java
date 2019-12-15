@@ -1,22 +1,22 @@
 package test.practice;
 
 import org.junit.Test;
-import practice.Frame;
+import practice.Game;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestFrame {
+public class TestGame {
 
     @Test
     public void testScoreNoThrows() {
-        Frame f = new Frame();
+        Game f = new Game();
         assertEquals(0, f.getScore());
     }
 
     @Test
     public void testAddOneThrow()
     {
-        Frame f = new Frame();
+        Game f = new Game();
         f.add(5);
         assertEquals(5, f.getScore());
     }
