@@ -96,4 +96,28 @@ public class TestGame {
         g.add(10);         // strike in last position of array
         assertEquals(20, g.getScore());
     }
+
+    @Test
+    public void testForSampleGame() {
+        g.add(1);
+        g.add(4);
+        g.add(4);
+        g.add(5);
+        g.add(6);
+        g.add(4);
+        g.add(5);
+        g.add(5);
+        g.add(10);
+        g.add(0);
+        g.add(1);
+        g.add(7);
+        g.add(3);
+        g.add(6);
+        g.add(4);
+        g.add(10);
+        g.add(2);
+        g.add(8);
+        g.add(6);
+        assertEquals(133, g.getScore());
+    }
 }
