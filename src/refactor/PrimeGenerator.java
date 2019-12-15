@@ -31,25 +31,24 @@ public class PrimeGenerator {
     }
 
     private static void putUncrossedIntegerIntoResult() {
-        int i;
-        int j;
-
-        // how many primes are there?
-        int count = 0;
-        for (i = 2; i < isCrossed.length; i++) {
-            if (notCrossed(i)) {
-                count++;   // bump count
-            }
-        }
-
-        result = new int[count];
+        result = new int[numberOfUncrossedIntegers()];
 
         // move the primes into the result
-        for (i = 2, j = 0; i < isCrossed.length; i++) {
+        for (int i = 2, j = 0; i < isCrossed.length; i++) {
             if (notCrossed(i)) {    // if prime
                 result[j++] = i;
             }
         }
+    }
+
+    private static int numberOfUncrossedIntegers() {
+        int count = 0;
+        for (int i = 2; i < isCrossed.length; i++) {
+            if (notCrossed(i)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     private static void crossOutMultiples() {
@@ -73,7 +72,7 @@ public class PrimeGenerator {
     }
 
     private static void crossOutMultiplesOf(int i) {
-        for (int multiple = 2*i; multiple < isCrossed.length; multiple += i) {
+        for (int multiple = 2 * i; multiple < isCrossed.length; multiple += i) {
             isCrossed[multiple] = true;
         }
     }
