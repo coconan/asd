@@ -16,11 +16,15 @@ public class Game {
     }
 
     private void adjustCurrentFrame(int pins) {
-        if (!firstThrowInFrame || strike(pins)) {
+        if (lastBallInFrame(pins)) {
             advanceFrame();
         } else {
             firstThrowInFrame = false;
         }
+    }
+
+    private boolean lastBallInFrame(int pins) {
+        return strike(pins) || !firstThrowInFrame;
     }
 
     private boolean strike(int pins) {
