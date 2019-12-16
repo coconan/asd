@@ -19,18 +19,12 @@ public class TestGame {
         assertEquals(0, g.getScore());
     }
 
-    @Test
-    public void testAddOneThrow() {
-        g.add(5);
-        assertEquals(1, g.getCurrentFrame());
-    }
 
     @Test
     public void testTwoThrowsNoMark() {
         g.add(5);
         g.add(4);
         assertEquals(9, g.getScore());
-        assertEquals(2, g.getCurrentFrame());
     }
 
     @Test
@@ -42,7 +36,6 @@ public class TestGame {
         assertEquals(18, g.getScore());
         assertEquals(9, g.getScoreForFrame(1));
         assertEquals(18, g.getScoreForFrame(2));
-        assertEquals(3, g.getCurrentFrame());
     }
 
     @Test
@@ -51,7 +44,6 @@ public class TestGame {
         g.add(7);
         g.add(3);
         assertEquals(13, g.getScoreForFrame(1));
-        assertEquals(2, g.getCurrentFrame());
     }
 
     @Test
@@ -63,7 +55,6 @@ public class TestGame {
         assertEquals(13, g.getScoreForFrame(1));
         assertEquals(18, g.getScoreForFrame(2));
         assertEquals(18, g.getScore());
-        assertEquals(3, g.getCurrentFrame());
     }
 
     @Test
@@ -73,7 +64,6 @@ public class TestGame {
         g.add(6);
         assertEquals(19, g.getScoreForFrame(1));
         assertEquals(28, g.getScore());
-        assertEquals(3, g.getCurrentFrame());
     }
 
     @Test
@@ -82,7 +72,6 @@ public class TestGame {
             g.add(10);
         }
         assertEquals(300, g.getScore());
-        assertEquals(11, g.getCurrentFrame());
     }
 
     @Test
