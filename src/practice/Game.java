@@ -41,18 +41,22 @@ public class Game {
             if (firstThrow == 10) {
                 score += 10 + itsThrows[ball] + itsThrows[ball + 1];
             } else {
-                secondThrow = itsThrows[ball++];
-
-                int frameScore = firstThrow + secondThrow;
-                // spare needs next frames first throw
-                if (frameScore == 10) {
-                    score += frameScore + itsThrows[ball];
-                } else {
-                    score += frameScore;
-                }
+                score += handleSecondThrow();
             }
         }
         return score;
+    }
+
+    private int handleSecondThrow() {
+        secondThrow = itsThrows[ball++];
+
+        int frameScore = firstThrow + secondThrow;
+        // spare needs next frames first throw
+        if (frameScore == 10) {
+            return frameScore + itsThrows[ball];
+        } else {
+            return frameScore;
+        }
     }
 
     public int getCurrentFrame() {
