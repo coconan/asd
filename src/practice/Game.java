@@ -18,15 +18,18 @@ public class Game {
     private void adjustCurrentFrame(int pins) {
         if (firstThrowInFrame) {
             if (pins == 10) {  // strike
-                itsCurrentFrame++;
+                advanceFrame();
             } else {
                 firstThrowInFrame = false;
             }
         } else {
             firstThrowInFrame = true;
-            itsCurrentFrame++;
+            advanceFrame();
         }
-        itsCurrentFrame = Math.min(11, itsCurrentFrame);
+    }
+
+    private void advanceFrame() {
+        itsCurrentFrame = Math.min(11, itsCurrentFrame + 1);
     }
 
     public int getScoreForFrame(int theFrame) {
